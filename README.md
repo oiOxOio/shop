@@ -15,4 +15,4 @@
 #### [在线演示 账号：admin@admin.com 密码：111111](https://shop.5hp.cc) 
 
 #### 演示视频
-<iframe src="//player.bilibili.com/player.html?bvid=BV1i54y1a7wu&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.bilibili.com/video/BV1i54y1a7wu)
