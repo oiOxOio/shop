@@ -32,7 +32,7 @@ public class ShopOrdersListController {
         List<Map<String, Object>> orders = orderDao.queryShopOrders(String.valueOf(user.getShopID()));
         model.addAttribute("orders", orders);
 
-        return "/shop/orders_list";
+        return "shop/orders_list";
 
     }
 }
