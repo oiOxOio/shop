@@ -79,7 +79,7 @@ public class ShopApplication {
 > 为保证演示站正常运行，此站每天都会初始化数据😉
 
 ### [演示视频](https://www.bilibili.com/video/BV1i54y1a7wu)
-[<img align="center" src="https://i.imgur.com/vKb2F1B.png"/>](https://www.bilibili.com/video/BV1i54y1a7wu)
+[![](https://i.imgur.com/vKb2F1B.png)](https://www.bilibili.com/video/BV1i54y1a7wu)
 
 ### 图片预览
 <img align="center" src="docs/mmexport1610503042771.jpg"/>
