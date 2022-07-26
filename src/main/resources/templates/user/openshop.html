@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申请开店</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/comm.css">
+    <link rel="stylesheet" href="/css/user_comm.css">
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="~{comm::nav}"></nav>
+
+<!-- 顶部信息栏 -->
+<div th:replace="~{user/comm::topbar}"></div>
+
+<div class="container mb-5 wallet user-comm ">
+    <div class="row">
+        <!--侧边导航栏-->
+        <div th:replace="~{user/comm::sidebar}"></div>
+        <!-- 内容区域 -->
+        <div class="col-md-9 col-xl-10">
+            <div class="card">
+                <!-- 标题栏 -->
+                <div class="card-header">
+                    <h5 class="card-title">申请开店</h5>
+                </div>
+                <!-- 内容栏 -->
+                <div class="card-body pb-0">
+                    <form id="info" method="post">
+                        <div class="row form-group">
+                            <label class="col-sm-2 col-form-label input-label">店铺名称</label>
+
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-2 col-form-label input-label">店铺描述</label>
+
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="description" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="col-12 text-right pr-0 mb-4">
+                        <button type="submit" form="info" class="btn btn-primary">申请</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 底部 -->
+<div th:replace="~{comm::footer}"></div>
+
+<!--全局脚本-->
+<div th:replace="~{comm::script}"></div>
+<script src="/js/user_info.js"></script>
+
+</body>
+
+</html>

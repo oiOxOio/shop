@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>工作台</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_index.css"/>
+</head>
+<body>
+
+<!-- 侧边导航 -->
+<div th:replace="~{shop/comm::topbar}"></div>
+<div th:replace="~{shop/comm::menu}"></div>
+
+<!-- 页面内容 -->
+<div class="right-main index">
+    <div class="row row-cols-1  row-cols-sm-2 row-cols-md-4 data">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    总收入
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    昨日订单
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    今日订单
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    今日收入
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 商品全局脚本 -->
+<div th:replace="~{/shop/comm::script}"></div>
+
+</body>
+
+</html>

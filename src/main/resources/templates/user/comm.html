@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+
+<!--顶部信息栏-->
+<div class="container-self personal-info" th:fragment="topbar">
+    <div class="header container mx-auto">
+        <div class="row">
+            <div class="touxiang col-12 d-flex  justify-content-between">
+                <div class="d-flex align-items-center">
+                    <img th:src="${session.user.getAvatar() ?: '/img/user/default_avatar.png'}" class="mx-auto"/>
+                    <div class="ml-4">
+                        <h2 th:text="${session.user.getName()} ?: '请设置用户名'"></h2>
+                        <span th:text="${session.user.getEmail()}"></span>
+                    </div>
+                </div>
+                <div class="my-auto  ml-3">
+                    <a href="/signout" class="d-none d-md-block">
+                        <button class="btn btn-primary btn-signout">退出</button>
+                    </a>
+                    <button class="btn btn-primary btn-user-menu d-md-none" data-toggle="collapse"
+                            data-target="#user-navbar" th:if="${#request.requestURL.indexOf('index') le 0}">
+                        <ion-icon src="/svg/reorder-two-outline.svg"></ion-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--侧边导航栏-->
+<div class="col-md-3 col-xl-2 navbar-expand-md" th:fragment="sidebar">
+    <div class="user-navbar mb-5 card collapse navbar-collapse" id="user-navbar">
+        <div class="card-body">
+            <strong>订单管理</strong>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/orders.html">
+                        <ion-icon src="/svg/card-text.svg"></ion-icon>
+                        <span>所有订单</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/payment.html">
+                        <ion-icon src="/svg/credit-card.svg"></ion-icon>
+                        <span>待付款</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/deliver.html">
+                        <ion-icon src="/svg/box-seam.svg"></ion-icon>
+                        <span>待发货</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/receive.html">
+                        <ion-icon src="/svg/minecart.svg"></ion-icon>
+                        <span>待收货</span></a>
+                </li>
+            </ul>
+            <strong>我的信息</strong>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/wishlist.html">
+                        <ion-icon src="/svg/heart.svg"></ion-icon>
+                        <span>收藏夹</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/wallet.html">
+                        <ion-icon src="/svg/wallet2.svg"></ion-icon>
+                        <span>钱包</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/info.html">
+                        <ion-icon src="/svg/file-earmark-person.svg"></ion-icon>
+                        <span>资料</span></a>
+                </li>
+            </ul>
+            <strong>更多服务</strong>
+            <ul class="nav flex-column">
+                <li class="nav-item" th:if="${session.user.getShopID() == null}">
+                    <a class="nav-link" href="/user/openshop.html">
+                        <ion-icon src="/svg/shop-window.svg"></ion-icon>
+                        <span>申请开店</span></a>
+                </li>
+                <li class="nav-item" th:if="${session.user.getShopID() != null}">
+                    <a class="nav-link" href="/shop/product/add.html">
+                        <ion-icon src="/svg/shop-window.svg"></ion-icon>
+                        <span>店铺管理</span></a>
+                </li>
+            </ul>
+            <hr class="d-md-none">
+            <ul class="nav flex-column d-md-none mb-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/signout">
+                        <ion-icon src="/svg/box-arrow-right.svg"></ion-icon>
+                        <span>退出登录</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</html>

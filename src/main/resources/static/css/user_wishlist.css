@@ -1,0 +1,48 @@
+.wishlist .item {
+    padding: 0 1.4rem 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.0625rem solid #e7eaf3;
+}
+
+.wishlist .item:last-child {
+    border-bottom: none;
+}
+
+.wishlist .item a {
+    flex: 2;
+    color: #212529;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.wishlist .item img {
+    width: 6rem;
+    height: 6rem;
+    margin-right: 1rem;
+    border-radius: 4px;
+}
+
+.wishlist .item .title {
+    height: 1.6rem;
+    overflow: hidden;
+}
+
+.wishlist .item .attr {
+    color: #677788;
+}
+
+.wishlist .item .price {
+    color: #007bff;
+    margin-bottom: 0;
+}
+
+.wishlist .item .btns p {
+    color: #677788;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.wishlist .item .btns span {
+    margin-left: .2rem;
+    vertical-align: text-top;
+}

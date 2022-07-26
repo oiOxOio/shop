@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收藏夹</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/comm.css">
+    <link rel="stylesheet" href="/css/user_comm.css">
+    <link rel="stylesheet" href="/css/user_orders.css">
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="~{comm::nav}"></nav>
+
+<!-- 顶部信息栏 -->
+<div th:replace="~{user/comm::topbar}"></div>
+
+<!-- 个人资料 -->
+<div class="container mb-5 orders user-comm ">
+    <div class="row">
+        <!-- 侧边导航栏 -->
+        <div th:replace="~{user/comm::sidebar}"></div>
+        <!-- 内容区域 -->
+        <div class="col-md-9 col-xl-10">
+            <div class="card">
+
+                <!-- 标题栏 -->
+                <div class="card-header">
+                    <h5 class="card-title" th:text="${pageName}">页面名称</h5>
+                </div>
+
+                <!-- 内容栏 -->
+                <div class="card-body">
+
+                    <!-- 收藏夹列表 -->
+                    <div class="col-12 item" th:each="order : ${orders}">
+                        <div class="head">
+                            <div class="d-flex">
+                                <img th:src="${productPath+order.get('img')}">
+                                <div>
+                                    <h5 class="title" th:text="${order.get('title')}">商品标题</h5>
+                                    <p class="attr" th:text="${order.get('attr')}">商品属性 X1</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row text-center row-cols-2 row-cols-md-4 body">
+                            <div class="col">
+                                <p>编号</p>
+                                <p class="order-id" th:text="${order.get('orders_id')}">字段</p>
+                            </div>
+                            <div class="col">
+                                <p>状态</p>
+                                <p class="text-info" th:if="${order.get('status') eq 'payment'}">待付款</p>
+                                <p class="text-warning" th:if="${order.get('status') eq 'deliver'}">待发货</p>
+                                <p class="btn-receive" th:if="${order.get('status') eq 'receive'}">待收货</p>
+                                <p class="text-success" th:if="${order.get('status') eq 'finish'}">已完成</p>
+                            </div>
+                            <div class="col">
+                                <p>价格</p>
+                                <p th:text="${order.get('price')}">字段</p>
+                            </div>
+                            <div class="col">
+                                <p>时间</p>
+                                <p th:text="${order.get('order_time')}">字段</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 分页 -->
+                    <nav aria-label="Page navigation" th:if="${!orders.isEmpty()}">
+                        <ul class="pagination mt-4 justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" th:href="'?p='+${page.get('current')-1}">
+                                    <span>&laquo;</span>
+                                </a>
+                            </li>
+                            <li th:class="'page-item'+(${page.get('current') eq pageNo} ? ' active' : '')"
+                                th:each="pageNo : ${#numbers.sequence(1,page.get('pages'))}"><a class="page-link"
+                                                                                                th:href="'?p='+${pageNo}"
+                                                                                                th:text="${pageNo}">0</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" th:href="'?p='+${page.get('current')+1}">
+                                    <span>&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- 没有数据提示 -->
+                    <div class="text-center py-5 no-data" th:if="${orders.isEmpty()}">
+                        <img src="/img/status/no-data.svg">
+                        <h5 class="mt-4 text">没有相关信息</h5>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 提示弹框 -->
+<div th:replace="~{comm::prompt-status}"></div>
+
+<!-- 底部 -->
+<div th:replace="~{comm::footer}"></div>
+<!--全局脚本-->
+<div th:replace="~{comm::script}"></div>
+<script src="/js/user_order.js"></script>
+
+</body>
+</html>

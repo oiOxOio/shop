@@ -1,0 +1,17 @@
+.wallet .card-body {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.wallet .card-body .input-group {
+    max-width: 13rem;
+}
+
+.wallet .card-body .input-group .btn-outline-secondary:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.wallet .card-body .text-primary small {
+    font-size: 1.4rem;
+}

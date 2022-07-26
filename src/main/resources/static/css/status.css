@@ -1,0 +1,11 @@
+.status {
+    padding: 5rem 0;
+}
+
+.status h3 {
+    letter-spacing: 3px;
+}
+
+.status img {
+    max-width: 22rem;
+}

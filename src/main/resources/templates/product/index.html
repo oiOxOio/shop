@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>产品</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/comm.css">
+    <link rel="stylesheet" href="/css/product_index.css">
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="~{comm::nav}"></nav>
+
+<!-- 商品详情 -->
+<div class="container product-index">
+
+    <!-- 图片轮播和购买选项 -->
+    <div class="row mt-4 mb-5">
+        <!-- 图片轮播 -->
+        <div class="col-md-6 product-carousel">
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+
+                <!-- 轮播缩略图 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" th:data-slide-to="${attr.index}"
+                        th:class="${attr.index}=='0' ? 'active' : ''" th:style="'background-image:url('+${img}+')'"
+                        th:each="img,attr : ${product.getImg()}"></li>
+                </ol>
+
+                <!-- 轮播图片 -->
+                <div class="carousel-inner">
+                    <div th:class="'carousel-item '+(${attr.index}=='0' ? 'active' : '')"
+                         th:each="img,attr : ${product.getImg()}">
+                        <img th:src="${img}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+
+                <!-- 切换按钮 -->
+                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                    <ion-icon src="/svg/chevron-back-outline.svg"></ion-icon>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                    <ion-icon src="/svg/chevron-forward-outline.svg"></ion-icon>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- 购买选项 -->
+        <div class="col-md-6 details">
+
+            <form method="post" id="orders">
+                <input type="hidden" class="product_id" name="product_id" th:value="${product.getId()}">
+                <input type="hidden" class="attr_id" name="attr_id" th:value="${product.getAttr().get(0).get('id')}">
+            </form>
+
+            <form action="/pay" method="post" target="_blank" id="product-buy">
+                <input type="hidden" name="products">
+            </form>
+
+            <!-- 标题 -->
+            <h4 class="title mt-4 mt-md-0" th:text="${product.getTitle()}">商品标题</h4>
+
+            <!-- 价格 -->
+            <h2 class="price mt-lg-3 mb-lg-5"><small>￥</small><span th:text="${product.getAttr().get(0).get('price')}">0.00</span>
+            </h2>
+
+            <!-- 属性 -->
+            <div class="attr mt-3">
+                <button class="btn btn-attr" th:each="attr : ${product.getAttr()}" th:text="${attr.get('name')}"
+                        th:value="${attr.get('id')}" th:attr="price=${attr.get('price')}">标签
+                </button>
+            </div>
+
+            <!-- 操作按钮 -->
+            <div class="operation row">
+                <!-- 购买数量 -->
+                <div class="col-6 d-none">
+                    <div class="input-group input-add-sub my-4">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1">
+                                <ion-icon src="/svg/dash.svg"></ion-icon>
+                            </button>
+                        </div>
+                        <input type="text" class="form-control text-center" value="1">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                                <ion-icon src="/svg/plus.svg"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 购买按钮 -->
+                <div class="col-12 col-lg-6">
+                    <button class="btn my-4 btn-buy">立即购买</button>
+                </div>
+                <div class="col-lg-6"></div>
+
+                <!-- 加购按钮 -->
+                <div class="col-6 col-lg-3">
+                    <button class="btn text-nowrap btn-addcart">
+                        <ion-icon src="/svg/cart3.svg"></ion-icon>
+                        <span>加购</span></button>
+                </div>
+
+                <!-- 收藏按钮 -->
+                <div class="col-6 col-lg-3">
+                    <button class="btn btn-addwishlist">
+                        <ion-icon src="/svg/heart.svg"></ion-icon>
+                        <span>收藏</span></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--详情描述-->
+    <div class="row mb-5">
+        <div class="col description" th:utext="${product.getDescription()}">
+            商品描述
+        </div>
+    </div>
+</div>
+
+<!-- 提示弹框 -->
+<div th:replace="~{comm::prompt-status}"></div>
+
+<!-- 底部 -->
+<div th:replace="~{comm::footer}"></div>
+
+<!--全局脚本-->
+<div th:replace="~{comm::script}"></div>
+<script src="/js/product_index.js"></script>
+
+</body>
+</html>

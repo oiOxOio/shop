@@ -1,0 +1,215 @@
+#carousel {
+    height: 30rem;
+    overflow: hidden;
+}
+
+#carousel .carousel-inner {
+    height: 30rem;
+}
+
+#carousel .carousel-item div {
+    height: 30rem;
+    background-size: cover;
+    background-position: center;
+}
+
+#carousel .carousel-indicators li {
+    height: 6px;
+}
+
+.banner .tab {
+    padding: 0;
+}
+
+/* 特点描述 */
+.feature .featurebox {
+    position: relative;
+    padding-left: 64px;
+}
+
+.feature .featurebox img {
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+}
+
+.feature .featurebox h5 {
+    color: #161c2d;
+}
+
+.feature .featurebox p {
+    color: #869ab8;
+}
+
+/* 为你推荐 */
+.recommend .box {
+    position: relative;
+    transition: all .3s;
+}
+
+.recommend .box .title {
+    color: #212529;
+    margin-bottom: .4rem;
+}
+
+.discount .box .price,
+.recommend .box .price {
+    color: #69b3fe;
+    font-size: 19px;
+}
+
+.discount .box:hover,
+.recommend .box:hover {
+    box-shadow: 0 0.3rem 1.525rem -0.375rem rgba(0, 0, 0, 0.1);
+}
+
+.recommend .box:hover .toolbar {
+    display: block;
+}
+
+.recommend .box .toolbar {
+    display: none;
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 2.1em;
+}
+
+.recommend .box .toolbar ion-icon {
+    margin-top: 6px;
+}
+
+.discount .box .toolbar ion-icon,
+.recommend .box .toolbar ion-icon {
+    font-size: 1.1rem;
+    color: #373f50;
+    background: #f3f5f9;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.discount .box .toolbar ion-icon:hover,
+.recommend .box .toolbar ion-icon:hover {
+    color: #69b3fe;
+}
+
+/* 优惠折扣 */
+.discount .box {
+    transition: all .3s;
+}
+
+.discount .box .title {
+    color: #212529;
+    margin-top: .4rem;
+    margin-bottom: 0;
+}
+
+.discount .box .price {
+    margin-bottom: .3rem;
+}
+
+.discount .box .price del {
+    font-size: .2rem;
+    margin-left: .3rem;
+}
+
+.discount .box .col-5 {
+    position: relative;
+}
+
+.discount .box .col-5 .badge {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #fff;
+    background: #f34770;
+    box-shadow: 0 0.5rem 1.125rem -0.275rem rgba(243, 71, 112, 0.9);
+}
+
+.discount .box:hover .toolbar {
+    opacity: 1;
+}
+
+.discount .box .toolbar {
+    opacity: 0;
+}
+
+.zone .block {
+    color: #373f50;
+    background-color: #f6f9fc;
+    transform: all 1s;
+}
+
+.zone .block:first-child .text {
+    padding: 1.5rem 0 0 1.8rem;
+}
+
+.zone .block:last-child .text {
+    padding: 1.5rem 1.8rem 0 0;
+}
+
+.zone .block .btn:hover {
+    transform: translateY(.22rem);
+    box-shadow: none;
+}
+
+.zone .block .btn {
+    margin-top: 1.2rem;
+    color: #fff;
+    letter-spacing: 2px;
+    background: rgb(66, 214, 151);
+    box-shadow: 0 0.5rem 1.125rem -0.275rem rgba(66, 214, 151, 0.9);
+}
+
+.zone img {
+    max-height: 194px;
+}
+
+
+@media (max-width: 576px) {
+
+}
+
+@media (max-width: 992px) {
+    #carousel {
+        height: 20rem;
+        overflow: hidden;
+    }
+
+    #carousel .carousel-inner {
+        height: 20rem;
+    }
+
+    #carousel .carousel-item div {
+        height: 20rem;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .recommend .box .toolbar {
+        display: block;
+        width: 100%;
+        position: static;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    .recommend .box .toolbar ion-icon {
+        font-size: 1.2rem;
+        padding: 8px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .discount .box .toolbar {
+        opacity: 1;
+    }
+
+    .discount .box .toolbar ion-icon {
+        font-size: 1.2rem;
+        padding: 8px;
+        margin-right: 14px;
+    }
+}

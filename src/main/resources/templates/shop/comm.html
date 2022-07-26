@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- 侧边导航 -->
+<div class="nav topbar" th:fragment="topbar">
+    <div class="nav-btn btn-primary hide-btn" id="topbar">
+        <a href="/index.html" target="_blank" class="text-decoration-none d-none">
+            <img src="/img/logo-white.png">
+            <strong>DIGITAL SHOP</strong>
+        </a>
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-justify hide-svg" fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+    </div>
+</div>
+
+<div id="mobile-menu" class="mobile-nav hide-nav" th:fragment="menu">
+    <ul class="nav">
+        <div class="user">
+            <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" class="collapsed ">
+                <div class="touxiang">
+                    <img th:src="${session.user.getAvatar() ?: '/img/user/default_avatar.png'}"
+                         class="avatar-img rounded-circle">
+                </div>
+                <span th:text="${session.user.getName()}">用户名称</span>
+            </a>
+            <div class="in collapse " id="collapseExample">
+                <ul class="nav">
+                    <li>
+                        <a href="/user/index.html">
+                            <span class="link-collapse">个人中心</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/info.html">
+                            <span class="link-collapse">修改个人资料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/signout">
+                            <span class="link-collapse">退出登录</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <li class="nav-item">
+            <a data-toggle="collapse" href="#orders" class="collapsed" aria-expanded="false">
+                <div class="list-icon">
+                    <ion-icon src="/svg/file-text.svg"></ion-icon>
+                </div>
+                <span>订单管理</span>
+            </a>
+            <div class="collapse" id="orders">
+                <ul class="nav nav-collapse">
+                    <li>
+                        <a href="/shop/orders/list.html">
+                            <span class="sub-item ">所有订单</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a data-toggle="collapse" href="#product" class="collapsed" aria-expanded="false">
+                <div class="list-icon">
+                    <ion-icon src="/svg/file-binary.svg"></ion-icon>
+                </div>
+                <span>商品管理</span>
+            </a>
+            <div class="collapse" id="product">
+                <ul class="nav nav-collapse">
+                    <li>
+                        <a href="/shop/product/list.html">
+                            <span class="sub-item ">所有商品</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/shop/product/add.html">
+                            <span class="sub-item">添加商品</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!-- 商品全局脚本 -->
+<div th:fragment="script">
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/ionicons.js"></script>
+    <script src="/js/comm.js"></script>
+    <script src="/js/shop_comm.js"></script>
+</div>
+
+</body>
+</html>

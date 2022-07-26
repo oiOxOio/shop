@@ -1,0 +1,207 @@
+ion-icon {
+    vertical-align: middle;
+}
+
+.btn:focus,
+.page-link:focus,
+.form-control:focus,
+.custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none !important;
+}
+
+/* 导航条样式 */
+.navbar-comm .navbar.fixed-top {
+    position: sticky !important;
+}
+
+.navbar-comm {
+    background: #fff;
+}
+
+.navbar-comm .navbar-brand > a img {
+    height: 38px;
+    vertical-align: top;
+}
+
+.navbar-comm .navbar-brand > a strong {
+    font-size: 22px;
+    vertical-align: middle;
+}
+
+.navbar-comm .navbar-brand ion-icon {
+    color: #4b566b;
+    font-size: 30px;
+}
+
+.navbar-comm .navbar-brand .dropdown-menu {
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    margin-top: .5rem;
+    box-shadow: 0px 12px 15px rgba(140, 152, 164, 0.1);
+    border-top: 0.1875rem solid #377dff;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0;
+
+    animation: flyup .4s;
+}
+
+.navbar-comm .navbar-brand .dropdown-menu .box:hover ion-icon {
+    color: #377dff;
+    transition: all .4s;
+}
+
+.navbar-comm .navbar-brand .dropdown-menu .box ion-icon {
+    color: #69b3fe;
+    font-size: 2rem;
+    min-width: 2rem;
+    background: rgb(105 179 254 / 10%);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.navbar-comm .navbar-brand .dropdown-menu .box p a {
+    color: #1e2022;
+}
+
+.navbar-comm .navbar-brand .dropdown-menu .box small a {
+    color: #677788;
+}
+
+.navbar-comm .navbar-brand .dropdown-menu .row {
+    width: 100%;
+}
+
+.navbar-comm.navbar-drop {
+    animation: bardrop .6s;
+    box-shadow: 0 0.25rem 0.5625rem -0.0625rem rgba(0, 0, 0, 0.03), 0 0.275rem 1.25rem -0.0625rem rgba(0, 0, 0, 0.05);
+}
+
+.navbar-comm form .form-control {
+    color: #4b566b !important;
+    border-width: 2px !important;
+    border-color: #dae1e7 !important;
+    border-right: none;
+    background-color: transparent;
+}
+
+.navbar-comm form .form-control:focus {
+    background: none;
+}
+
+.navbar-comm form .btn-outline-secondary {
+    border-width: 2px;
+    border-left: none;
+    border-color: #dae1e7;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-comm form .btn-outline-secondary ion-icon {
+    color: #4b566b;
+    font-size: 1.2rem;
+    vertical-align: sub;
+}
+
+.navbar-comm form .btn-outline-secondary:focus,
+.navbar-comm form .input-group-append:focus {
+    background: none !important;
+    border-color: #dae1e7 !important;
+
+}
+
+.navbar-comm form .btn-outline-secondary:hover {
+    background: none;
+    border-color: #dae1e7;
+}
+
+.navbar-comm .nav-item {
+    position: relative;
+}
+
+.navbar-comm .nav-item span {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+}
+
+.navbar-comm .nav-item img {
+    width: 36px;
+    height: 36px;
+}
+
+.navbar-comm .nav-item ion-icon {
+    color: #4b566b;
+    font-size: 30px
+}
+
+.footer {
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+}
+
+#chat-body .sidebar ion-icon {
+    position: fixed;
+    right: 2.4rem;
+    bottom: 2.7rem;
+    font-size: 2rem;
+    color: #3973f4;
+    background: rgb(255 255 255);
+    padding: 13px;
+    border-radius: 50%;
+    box-shadow: 0 0.5rem 1.125rem -0.275rem rgba(105, 179, 254, 0.9);
+}
+
+/* 加减输入组 */
+.input-add-sub .form-control,
+.input-add-sub .btn-outline-secondary {
+    border-color: #e7eaf3;
+}
+
+.input-add-sub .btn-outline-secondary:hover {
+    background-color: #3797ff !important;
+    border-color: #3797ff !important;
+}
+
+.input-add-sub .btn-outline-secondary:active {
+
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+}
+
+@media (max-width: 768px) {
+    nav form.w-50 {
+        width: 100% !important;
+    }
+
+    .footer .sidebar {
+        display: none;
+    }
+}
+
+@keyframes bardrop {
+    0% {
+        transform: translateY(-70px);
+    }
+    100% {
+        transform: translateY(0px);
+
+    }
+}
+
+@keyframes flyup {
+    0% {
+        transform: translateY(28px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+
+    }
+}
+
+/* 弹出框提示 */
+.prompt-status .modal-body img {
+    width: 9rem;
+}

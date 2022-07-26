@@ -1,0 +1,68 @@
+/*顶部信息栏*/
+.topbar {
+    color: #fff;
+    background: #373f50;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+/*筛选栏*/
+.optionsbar {
+    background: #fff;
+    box-shadow: 0 0.3rem 1.525rem -0.375rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.optionsbar .btn-filter {
+    color: #4b566b;
+    background: #f3f5f9;
+}
+
+.optionsbar .card {
+    border: none;
+}
+
+.optionsbar .card-body {
+    padding: 0;
+}
+
+.optionsbar .card-body .price-range .form-control {
+    border-color: #f3f3f3;
+}
+
+/*商品列表*/
+.shops .box .title {
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+    height: 2.4rem;
+    overflow: hidden;
+}
+
+.shops .box img {
+    position: relative;
+    z-index: -1;
+    border-radius: 4px;
+}
+
+.shops .box .bottom {
+    margin-bottom: .6rem;
+}
+
+.shops .box a {
+    display: block;
+    color: #373f50;
+    text-decoration: none;
+}
+
+.shops .box .bottom .price {
+    color: #1f8bff;
+    margin-bottom: 0;
+}
+
+.shops .box .bottom ion-icon {
+    cursor: pointer;
+    color: #373f50;
+    background: #f3f5f9;
+    border-radius: 50%;
+    font-size: .9rem;
+    padding: .4rem;
+}

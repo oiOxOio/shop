@@ -1,0 +1,54 @@
+spring:
+  #数据库连接配置
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/shop?serverTimezone=Asia/Shanghai&max_allowed_packet=30000000
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  #thymeleaf模板配置
+  thymeleaf:
+    cache: false
+
+  #邮箱连接配置
+  mail:
+    username: # 邮箱
+    password: # 邮箱授权码
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtl:
+          ssl:
+            enable=true
+
+  # 请求上传大小
+  servlet:
+    multipart:
+      max-file-size: 38MB
+      max-request-size: 38MB
+
+  #静态目录配置
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/test/,classpath:/upload/
+
+app:
+  #应用信息
+  name: DIGITAL SHOP
+  description: 数字化物品交易平台
+  #上传路径
+  path:
+    avatar: /upload/avatar/
+    product: /upload/product/
+  #支付宝支付配置
+  alipay:
+    protocol: https
+    gatewayHost: openapi.alipaydev.com
+    signType: RSA2
+    appId: #应用id
+    merchantPrivateKey: #私钥
+    alipayPublicKey: #公钥
+#端口设置
+server:
+  tomcat:
+    max-http-form-post-size: -1
+  port: 8081

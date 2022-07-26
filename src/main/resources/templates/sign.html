@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录注册</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/comm.css">
+    <link rel="stylesheet" href="/css/sign.css">
+    <style>
+        .footer {
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="~{comm::nav}"></nav>
+
+<!-- 登录注册 -->
+<div class="sign">
+    <!-- 居中登录框 -->
+    <div class="container-fluid sign">
+        <div class="row justify-content-center">
+            <div class="col-5">
+                <div class="box d-flex">
+                    <div class="left d-flex flex-column justify-content-center init">
+                        <h2 class="mb-4">
+                            <strong class="text-signin">登录</strong>
+                            <strong class="text-lab">/</strong>
+                            <strong class="text-signup">注册</strong>
+                        </h2>
+                        <p class="text-danger" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                        <form class="form-sign" method="post">
+                            <div class="form-group input-box box-email">
+                                <label for="email">电子邮箱</label>
+                                <input type="email" id="email" name="email" class="form-control"
+                                       autocomplete="new-password" required>
+                            </div>
+                            <div class="form-group input-box box-code">
+                                <label for="security-code">邮件验证码</label>
+                                <div class="input-group">
+                                    <input type="text" id="security-code" name="code" class="form-control"
+                                           autocomplete="new-password" required disabled>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary btn-code" type="button">发送验证码</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group input-box box-password">
+                                <label for="password">密码</label>
+                                <input type="password" id="password" name="password" class="form-control" minlength="6"
+                                       required disabled>
+                            </div>
+                            <div class="form-group form-check box-agreement">
+                                <input type="checkbox" class="form-check-input" id="agreement" checked disabled>
+                                <label class="form-check-label" for="agreement">我已阅读并同意<a href="#"
+                                                                                          class="text-decoration-none">用户协议</a></label>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100 btn-next">下一步</button>
+                            <button type="submit" class="btn btn-primary w-100 btn-signin">登录</button>
+                            <button type="submit" class="btn btn-primary w-100 btn-signup">注册</button>
+                        </form>
+                    </div>
+                    <div class="right d-sm-none d-none d-md-block">
+                        <img src="img/illustration/sign.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 背景视频 -->
+    <video autoplay loop muted src="video/video.mp4"></video>
+
+</div>
+
+<!--全局脚本-->
+<div th:replace="~{comm::script}"></div>
+<script src="js/sign.js"></script>
+
+</body>
+</html>

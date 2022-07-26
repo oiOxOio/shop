@@ -1,0 +1,82 @@
+.cart .item {
+    cursor: pointer;
+    padding: .8rem;
+    border-bottom: solid 0.0625rem #e7eaf3;
+}
+
+.cart .item.active {
+    background: #f1f5ff;
+}
+
+.cart .item:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.cart .item:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.cart .item a {
+    color: #212529;
+    height: 1.7rem;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.cart .item a:hover {
+    color: #007bff;
+}
+
+.cart .item .left {
+    flex: 2;
+    margin-right: 1rem;
+}
+
+.cart .item .left img {
+    width: 7rem;
+    margin-right: .6rem;
+    border-radius: 5px;
+}
+
+.cart .right span {
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.cart .right ion-icon {
+    margin-right: .3rem;
+}
+
+/* 购物车统计样式 */
+.cart .total {
+    padding: 1rem;
+    box-shadow: 0px 3px 6px 0px rgba(140, 152, 164, 0.25);
+}
+
+.cart .total .title {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.0625rem solid #e7eaf3;
+}
+
+.cart .total .price {
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 0.0625rem solid #e7eaf3;
+}
+
+/* 空购物车样式 */
+.cart-empty {
+    padding: 5rem 0;
+}
+
+.cart-empty h3 {
+    letter-spacing: 3px;
+}
+
+.cart-empty img {
+    max-width: 10rem;
+}

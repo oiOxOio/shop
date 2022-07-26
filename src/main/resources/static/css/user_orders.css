@@ -1,0 +1,42 @@
+.orders .item {
+    border: 0.0625rem solid #e7eaf3;
+    border-radius: 0.3125rem;
+    padding-top: 15px;
+    margin-bottom: 1.3rem;
+}
+
+.orders .item .head img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 4px;
+    margin-right: .6rem;
+}
+
+.orders .item .head .attr {
+    color: #677788;
+}
+
+.orders .item .head {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 0.0625rem solid #e7eaf3;
+}
+
+.orders .item .body .col {
+    margin-bottom: 15px;
+}
+
+.orders .item .body .col p {
+    margin-bottom: 0;
+    color: #1e2022;
+}
+
+.orders .item .body .col p.btn-receive {
+    color: #007bff !important;
+    cursor: pointer;
+}
+
+.orders .item .body .col p:first-child {
+    color: #677788;
+    margin-bottom: .3rem;
+}

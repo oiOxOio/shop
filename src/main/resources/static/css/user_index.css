@@ -1,0 +1,41 @@
+.labels .card-body img {
+    width: 5.2rem;
+}
+
+.labels .card-body strong {
+    vertical-align: middle;
+}
+
+.labels .card {
+    border: none;
+    box-shadow: 2px 6px 15px 0px rgba(69, 65, 78, 0.1);
+}
+
+/*卡片组*/
+.kapian {
+    margin-top: -70px;
+}
+
+.kapian a {
+    text-decoration: none;
+}
+
+.kapian .card {
+    border: none;
+    box-shadow: 2px 6px 15px 0px rgba(69, 65, 78, 0.1);
+}
+
+.kapian img {
+    width: 70px;
+    height: 70px;
+}
+
+.kapian span {
+    text-align: center;
+    padding-bottom: 10px;
+    color: #6c757d;
+}
+
+.kapian .card-body {
+    padding-bottom: 0.4rem !important;
+}

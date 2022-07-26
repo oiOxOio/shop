@@ -1,0 +1,103 @@
+/*个人信息*/
+.info .avatar {
+    position: relative;
+    display: inline-block;
+    width: 5.625rem;
+    height: 5.625rem;
+    border-radius: 50%;
+}
+
+.info .avatar-img {
+    width: 100%;
+    height: 100%;
+    border: solid #bcbcbc 1px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.info .avatar-initials {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.info .avatar-circle {
+    border-radius: 50%;
+}
+
+.info .avatar-circle .avatar-img {
+    border-radius: 50%;
+}
+
+.info .avatar-centered {
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.info .avatar-border-lg {
+    border: 0.1875rem solid #fff;
+}
+
+.info .file-attachment-btn {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding: 10px 20px;
+}
+
+.info .file-attachment-btn-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    cursor: inherit;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.info .btn:hover {
+    color: #007bff;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+.info .form-control {
+    height: 50px;
+}
+
+.info .btn:focus,
+.btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(55, 125, 255, 0.25);
+}
+
+.info .btn-white {
+    font-weight: 400;
+    background-color: #fff;
+    border-color: #e7eaf3;
+}
+
+.info .card-body label {
+    color: #6d6f71;
+}
+
+.info .input-group > input {
+    border: 0.0625rem solid #e7eaf3;
+}
+
+.info .input-group > input:focus {
+    box-shadow: rgba(0, 0, 200, 0.1) 0px 0px 10px 0px;
+}
+
+.info .card-footer {
+    background-color: #fff;
+    border-top: 0.0625rem solid #e7eaf3;
+}
+
+.info .btn {
+    padding: 6px 13px;
+}

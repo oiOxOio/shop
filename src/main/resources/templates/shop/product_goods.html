@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>货品管理</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_product.css"/>
+    <!-- froala editor -->
+    <link rel="stylesheet" href="/css/froala/froala_editor.css">
+    <link rel="stylesheet" href="/css/froala/froala_style.css">
+    <link rel="stylesheet" href="/css/froala/plugins/colors.css">
+    <link rel="stylesheet" href="/css/froala/plugins/line_breaker.css">
+    <link rel="stylesheet" href="/css/froala/plugins/table.css">
+    <link rel="stylesheet" href="/css/froala/plugins/char_counter.css">
+    <link rel="stylesheet" href="/css/froala/plugins/fullscreen.css">
+    <link rel="stylesheet" href="/css/froala/plugins/quick_insert.css">
+</head>
+<body>
+
+<!-- 侧边导航 -->
+<div th:replace="~{shop/comm::topbar}"></div>
+<div th:replace="~{shop/comm::menu}"></div>
+
+<!-- 页面内容 -->
+<div class="right-main product-goods">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- 添加商品 -->
+            <div class="card mb-5">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">货品设置</h5>
+                    <form>
+
+                        <input type="hidden" id="productid" th:value="${product.getId()}">
+
+                        <!-- 设置 -->
+                        <div class="form-group">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" name="autosend" id="autosend"
+                                       th:checked="${product.isAutoSend()}">
+                                <label class="custom-control-label" for="autosend">自动发货</label>
+                            </div>
+                        </div>
+
+                        <!-- 详情 -->
+                        <div class="form-group">
+                            <label for="edit">发货模板</label>
+                            <div id="edit" th:utext="${product.getTemplate()} ?: '{goods}'"></div>
+                        </div>
+
+                        <!-- 图片 -->
+                        <div class="form-group">
+                            <label>货品形式</label>
+                            <div class="input-group">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="type" id="goods-fixed"
+                                           value="fixed" th:checked="${product.getGoodsType()==1}">
+                                    <label class="form-check-label" for="goods-fixed">固定</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="type" id="goods-list"
+                                           value="list" th:checked="${product.getGoodsType()==2}">
+                                    <label class="form-check-label" for="goods-list">列表(一行一个)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 详情 -->
+                        <button type="button" class="btn btn-primary btn-goods">确定</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card my-5 goods" th:each="attr : ${product.getAttr()}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${attr.get('name')}"></h5>
+                    <div class="form-group">
+                        <label class="text-primary" th:text="'编号:'+${attr.get('id')}">货品内容</label>
+                        <input class="attr_id" type="hidden" th:value="${attr.get('id')}">
+                        <textarea class="form-control content" rows="6"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 列表货品 -->
+            <div class="card my-5">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">列表货品</h5>
+                    <div class="my-2" th:each="i : ${product.getAttr()}">
+                        <h6 class="text-primary" th:text="'编号'+${i.get('id')}">商品属性编号</h6>
+                        <div class="row row-cols-2">
+                            <div class="d-flex col justify-content-between" th:each="item : ${goods}"
+                                 th:if="${i.get('id')}==${item.get('product_attr_id')}">
+                                <h6 class="mb-0 text-truncate" th:text="${item.get('goods')}">货品内容</h6>
+                                <a th:href="'?del='+${item.get('id')}">
+                                    <ion-icon src="/svg/trash.svg"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 提示弹框 -->
+<div th:replace="~{comm::prompt-status}"></div>
+
+<!-- 商品全局脚本 -->
+<div th:replace="~{/shop/comm::script}"></div>
+
+<script src="/js/shop_product.js"></script>
+
+<!-- froala editor -->
+<script type="text/javascript" src="/js/froala/froala_editor.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/align.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/char_counter.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/code_beautifier.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/colors.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/draggable.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/entities.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/font_size.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/font_family.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/fullscreen.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/line_breaker.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/inline_style.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/lists.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/paragraph_format.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/paragraph_style.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/quick_insert.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/quote.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/table.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/save.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/url.min.js"></script>
+<script type="text/javascript" src="/js/froala/languages/zh_cn.js"></script>
+<script>
+    const editor = new FroalaEditor('#edit', {
+        language: 'zh_cn',
+        events: {
+            'image.beforeUpload': function (files) {
+                const editor = this
+                if (files.length) {
+                    var reader = new FileReader()
+                    reader.onload = function (e) {
+                        var result = e.target.result
+                        editor.image.insert(result, null, null, editor.image.get())
+                    }
+                    reader.readAsDataURL(files[0])
+                }
+                return false
+            }
+        }
+    })
+</script>
+
+</body>
+
+</html>

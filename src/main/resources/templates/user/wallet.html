@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的钱包</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/comm.css">
+    <link rel="stylesheet" href="/css/user_comm.css">
+    <link rel="stylesheet" href="/css/user_wallet.css">
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="~{comm::nav}"></nav>
+
+<!-- 顶部信息栏 -->
+<div th:replace="~{user/comm::topbar}"></div>
+
+<!-- 钱包 -->
+<div class="container mb-5 user-comm">
+    <div class="row">
+        <!-- 用户侧边导航栏 -->
+        <div th:replace="~{user/comm::sidebar}"></div>
+        <!-- 内容区域 -->
+        <div class="col-md-9 col-xl-10 wallet">
+            <div class="card">
+                <!-- 标题栏 -->
+                <div class="card-header">
+                    <h5 class="card-title">我的钱包</h5>
+                </div>
+                <!-- 内容栏 -->
+                <div class="card-body text-center">
+                    <form method="post" target="_blank">
+                        <h1 class="text-primary mb-4"><small>￥</small><span
+                                th:text="${session.user.getBalance()}">0.00</span></h1>
+                        <div class="input-group m-auto">
+                            <input type="number" name="money" class="form-control" min="0" max="999999"
+                                   placeholder="充值金额" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">充值</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 底部 -->
+<div th:replace="~{comm::footer}"></div>
+<!--全局脚本-->
+<div th:replace="~{comm::script}"></div>
+<script src="/js/user_info.js"></script>
+
+</body>
+</html>

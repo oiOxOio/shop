@@ -1,0 +1,8 @@
+.product-add .attr-title ion-icon {
+    padding: 2px;
+    font-size: 14px;
+    vertical-align: sub;
+    cursor: pointer;
+    border-radius: 50%;
+    background: rgba(222, 222, 222, 0.4);
+}

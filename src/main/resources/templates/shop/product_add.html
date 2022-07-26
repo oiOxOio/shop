@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>添加商品</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_product.css"/>
+    <!-- froala editor -->
+    <link rel="stylesheet" href="/css/froala/froala_editor.css">
+    <link rel="stylesheet" href="/css/froala/froala_style.css">
+    <link rel="stylesheet" href="/css/froala/plugins/colors.css">
+    <link rel="stylesheet" href="/css/froala/plugins/image_manager.css">
+    <link rel="stylesheet" href="/css/froala/plugins/image.css">
+    <link rel="stylesheet" href="/css/froala/plugins/line_breaker.css">
+    <link rel="stylesheet" href="/css/froala/plugins/table.css">
+    <link rel="stylesheet" href="/css/froala/plugins/char_counter.css">
+    <link rel="stylesheet" href="/css/froala/plugins/fullscreen.css">
+    <link rel="stylesheet" href="/css/froala/plugins/quick_insert.css">
+</head>
+<body>
+
+<!-- 侧边导航 -->
+<div th:replace="~{shop/comm::topbar}"></div>
+<div th:replace="~{shop/comm::menu}"></div>
+
+<!-- 页面内容 -->
+<div class="right-main product-add">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- 添加商品 -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">添加商品</h5>
+                    <form>
+
+                        <!-- 标题分类 -->
+                        <div class="form-row mb-3">
+                            <div class="form-group col-12 col-md-8">
+                                <label for="title">标题</label>
+                                <input type="text" class="form-control" id="title" maxlength="60" required>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <label for="class">分类</label>
+                                <select id="class" class="form-control">
+                                    <option th:each="cate : ${category}" th:if="${cate.get('parent_id')} != 0"
+                                            th:value="${cate.get('id')}" th:text="${cate.get('name')}">分类名
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 图片 -->
+                        <div class="form-group mb-4">
+                            <label for="images">图片</label>
+                            <div class="input-group">
+                                <input type="file" id="images" multiple="multiple" accept="image/jpeg,image/png">
+                            </div>
+                        </div>
+
+                        <!-- 属性 -->
+                        <div class="form-group mb-0 attr-title">
+                            <label>
+                                属性
+                                <ion-icon class="add" src="/svg/plus.svg"></ion-icon>
+                                <ion-icon class="remove" src="/svg/dash.svg"></ion-icon>
+                            </label>
+                        </div>
+                        <div class="form-row mb-3 attr">
+                            <div class="form-group col-6 col-md-4 col-lg-3">
+                                <div class="input-group">
+                                    <input type="text" placeholder="属性" class="form-control text" required>
+                                    <input type="number" placeholder="价格" class="form-control price" min="0" required>
+                                    <input type="number" placeholder="参考价" class="form-control ref-price" min="0"
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 详情 -->
+                        <div class="form-group">
+                            <label for="edit">详情描述</label>
+                            <div id="edit"></div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-addproduct">添加</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 提示弹框 -->
+<div th:replace="~{comm::prompt-status}"></div>
+
+<!-- 商品全局脚本 -->
+<div th:replace="~{/shop/comm::script}"></div>
+
+<script src="/js/shop_product.js"></script>
+
+<!-- froala editor -->
+<script type="text/javascript" src="/js/froala/froala_editor.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/align.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/char_counter.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/code_beautifier.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/colors.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/draggable.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/entities.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/font_size.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/font_family.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/fullscreen.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/image.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/line_breaker.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/inline_style.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/lists.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/paragraph_format.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/paragraph_style.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/quick_insert.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/quote.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/table.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/save.min.js"></script>
+<script type="text/javascript" src="/js/froala/plugins/url.min.js"></script>
+<script type="text/javascript" src="/js/froala/languages/zh_cn.js"></script>
+<script>
+    const editor = new FroalaEditor('#edit', {
+        language: 'zh_cn',
+        events: {
+            'image.beforeUpload': function (files) {
+                const editor = this
+                if (files.length) {
+                    var reader = new FileReader()
+                    reader.onload = function (e) {
+                        var result = e.target.result
+                        editor.image.insert(result, null, null, editor.image.get())
+                    }
+                    reader.readAsDataURL(files[0])
+                }
+                return false
+            }
+        }
+    })
+</script>
+
+</body>
+
+</html>

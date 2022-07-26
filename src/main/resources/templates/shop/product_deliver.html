@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>工作台</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_comm.css"/>
+</head>
+<body>
+
+<!-- 侧边导航 -->
+<div th:replace="~{shop/comm::topbar}"></div>
+<div th:replace="~{shop/comm::menu}"></div>
+
+<!-- 页面内容 -->
+<div class="right-main">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">发货</h5>
+                    <form method="post">
+                        <textarea class="form-control mb-3" name="goods" rows="6"></textarea>
+                        <input type="hidden" name="ordersid" th:value="${id}">
+                        <button type="submit" class="btn btn-primary">发货</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 商品全局脚本 -->
+<div th:replace="~{/shop/comm::script}"></div>
+
+</body>
+
+</html>

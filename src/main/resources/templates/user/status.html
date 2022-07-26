@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申请开店</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/comm.css">
+    <link rel="stylesheet" href="/css/user_comm.css">
+    <link rel="stylesheet" href="/css/user_info.css">
+    <style>
+        .status .right .card-body ion-icon {
+            font-size: 10rem;
+            margin: 3rem 0 1rem 0;
+        }
+
+        .status .right .card-body ion-icon.success {
+            color: #3ae374;
+        }
+
+        .status .right .card-body ion-icon.error {
+            color: #ff3838;
+        }
+
+        .status .right .card-body h2 {
+            margin-bottom: 2rem;
+        }
+
+        .status .right .card-body a {
+            width: 8rem;
+            color: #fff;
+            margin-bottom: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="~{comm::nav}"></nav>
+
+<!-- 顶部信息栏 -->
+<div th:replace="~{user/comm::topbar}"></div>
+
+<div class="container mb-5 status user-comm">
+    <div class="row">
+        <!--用户侧边导航栏-->
+        <div th:replace="~{user/comm::sidebar}"></div>
+        <div class="col-md-9 col-xl-10 right">
+            <div class="card">
+                <div class="card-body text-center pb-0">
+                    <ion-icon class="success" src="/svg/check-circle-fill.svg" th:if="${status}=='success'"></ion-icon>
+                    <ion-icon class="error" src="/svg/x-circle-fill.svg" th:if="${status}=='error'"></ion-icon>
+                    <h2 th:text="${msg}">提示状态</h2>
+                    <a th:href="${redirect} ?: '/user/index.html'" class="btn btn-primary btn-lg">返回</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- 底部 -->
+<div th:replace="~{comm::footer}"></div>
+<!--全局脚本-->
+<div th:replace="~{comm::script}"></div>
+<script src="/js/user_info.js"></script>
+
+</body>
+
+</html>

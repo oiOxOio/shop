@@ -1,0 +1,196 @@
+#chat-body a {
+    text-decoration: none;
+}
+
+#chat-body .chat-body-close {
+    position: fixed;
+    width: 0px;
+    height: 0px;
+    background: #f5f6fa;
+    border-radius: 20px;
+    overflow: hidden;
+    right: 7.2rem;
+    bottom: 3rem;
+    transition: all 0.2s;
+    overflow: hidden;
+}
+
+#chat-body .chat-body-open {
+    position: fixed;
+    height: 70%;
+    width: 450px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    right: 6.8rem;
+    bottom: 3rem;
+    z-index: 99;
+    transition: all 0.2s;
+    box-shadow: 0 0.25rem 0.5625rem -0.0625rem rgb(0 0 0 / 40%);
+}
+
+#chat-body .header1 {
+}
+
+#chat-body .header1 > div {
+    overflow: hidden;
+}
+
+#chat-body .header1 a {
+    margin-right: 22px;
+}
+
+#chat-body .header1 .online:before {
+    position: relative;
+    border: 5px solid green;
+    display: block;
+    bottom: -50px;
+    right: -37px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    border-radius: 50%;
+}
+
+#chat-body .header1 .off:before {
+    position: relative;
+    border: 0px solid green;
+    display: block;
+    bottom: -50px;
+    right: -37px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    border-radius: 50%;
+}
+
+#chat-body .touxiang {
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+#chat-body .touxiang img {
+    width: 100%;
+}
+
+#chat-body div > .input-group-append > button {
+    color: #6C757D;
+}
+
+#chat-body div > .input-group-append > button:hover {
+    color: black;
+}
+
+#chat-body small {
+    font-size: 10px;
+    color: #9496a0;
+}
+
+#chat-body .small {
+    color: #9698a1;
+}
+
+#chat-body .message-right small {
+    color: rgb(255 255 255 / .65);
+}
+
+#chat-body .bg-light {
+    background-color: white !important;
+}
+
+#chat-main {
+    height: 73%;
+    margin-right: -12px;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+#chat-main > div {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#chat-main .touxiang {
+}
+
+#chat-body .message {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 5px;
+}
+
+#chat-body .message + .message {
+    margin-top: rem(32px);
+}
+
+#chat-body .message-body {
+    flex: 1;
+    margin-right: -30px;
+}
+
+#chat-body .message-content {
+    border-radius: 10px 10px 10px 0px;
+    padding: 7px;
+    margin-left: -7px;
+    background-color: #f5f6fa;
+}
+
+#chat-body .message-right .message-content {
+    border-radius: 10px 10px 0px 10px;
+    margin-right: -7px;
+}
+
+#chat-body .message-content h6 {
+    margin-left: -80px;
+    font-family: "黑体";
+    font-size: 12px;
+}
+
+#chat-body .message-right {
+    margin-right: -45px;
+}
+
+#chat-body .message-right .touxiang {
+    -webkit-box-ordinal-group: 3;
+    order: 2;
+}
+
+#chat-body .chat-footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+}
+
+#chat-body .chat-footer textarea {
+    margin-top: 7px;
+    margin-right: 10px;
+    resize: none;
+    width: 64%;
+    overflow: hidden;
+    color: #9496a0;
+}
+
+#chat-body .chat-footer textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#chat-body .chat-footer a {
+    font-size: 24px;
+    color: #6C757D;
+}
+
+#chat-body .chat-footer svg {
+    transition: all 0s;
+}
+
+#chat-body .chat-footer a:hover {
+    color: #000000;
+}
+
+#chat-body .but {
+    cursor: pointer;
+}

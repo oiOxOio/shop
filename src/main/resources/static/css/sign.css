@@ -1,0 +1,95 @@
+.sign video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.sign .box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background: rgb(255 255 255 / 0.75);
+    border-radius: 6px;
+}
+
+.sign .box .left {
+    min-width: 18rem;
+    padding: 2rem;
+}
+
+.sign .box .left h2 {
+    color: #007bff;
+}
+
+.sign .box .left .form-group {
+    position: relative;
+}
+
+.sign .box .left .input-group-append .btn,
+.sign .box .left input {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #6c757d;
+    background: none;
+}
+
+.sign .box .left .input-group-append .btn:disabled {
+    opacity: 1 !important;
+}
+
+.sign .box .left .input-box label {
+    position: absolute;
+    top: 4px;
+    left: 11px;
+    color: #757d85;
+    font-size: 1.1rem;
+    transition: .3s;
+}
+
+.sign .box .left .input-box.focus label {
+    top: -12px;
+    font-size: .9rem;
+}
+
+.sign .box .left .input-group-append button:hover {
+    color: #007bff;
+    background: none;
+}
+
+.sign .box .right {
+    padding: 2rem;
+    padding-left: 0;
+}
+
+.sign .box .right img {
+    max-width: 30rem;
+}
+
+.sign .left.init .box-code,
+.sign .left.init .box-password,
+.sign .left.init .box-keep-signin,
+.sign .left.init .box-agreement,
+.sign .left.init .btn-signin,
+.sign .left.init .btn-signup,
+.sign .left.signup .box-keep-signin,
+.sign .left.signup .text-lab,
+.sign .left.signup .text-signin,
+.sign .left.signup .btn-signin,
+.sign .left.signup .btn-next,
+.sign .left.signin .text-lab,
+.sign .left.signin .text-signup,
+.sign .left.signin .box-code,
+.sign .left.signin .box-agreement,
+.sign .left.signin .btn-signup,
+.sign .left.signin .btn-next {
+    display: none;
+}

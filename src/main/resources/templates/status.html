@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/comm.css">
+    <link rel="stylesheet" href="/css/status.css">
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="~{comm::nav}"></nav>
+
+<!--  状态提示 -->
+<div class="container status my-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <img th:src="'/img/status/'+${img}" class="w-100">
+            <h3 class="mt-4" th:text="${title}"><strong>提示标题</strong></h3>
+            <p class="mb-4" th:text="${subtitle}">提示副标题</p>
+            <a th:href="${redirect}">
+                <button type="button" class="btn btn-primary" th:text="${btntext}">按钮文字</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--全局脚本-->
+<div th:replace="~{comm::script}"></div>
+
+<!-- 底部 -->
+<div th:replace="~{comm::footer}"></div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>工作台</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_index.css"/>
+</head>
+<body>
+
+<!-- 侧边导航 -->
+<div th:replace="~{shop/comm::topbar}"></div>
+<div th:replace="~{shop/comm::menu}"></div>
+
+<!-- 页面内容 -->
+<div class="right-main index">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">所有商品</h5>
+                    <table class="table table-bordered table-hover text-center">
+                        <thead>
+                        <tr>
+                            <th scope="col">编号</th>
+                            <th scope="col">标题</th>
+                            <th scope="col">分类</th>
+                            <th scope="col">自动发货</th>
+                            <th scope="col">添加时间</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="product : ${products}">
+                            <th scope="row" th:text="${product.getId()}">ID</th>
+                            <td th:text="${product.getTitle()}">Title</td>
+                            <td th:text="${product.getClazz()}">Class</td>
+                            <td th:text="${product.isAutoSend() ? '是' : '否'}">AutoSend</td>
+                            <td th:text="${product.getAddTime()}">AddTime</td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a th:href="'/shop/product/goods/'+${product.getId()}+'.html'" type="button"
+                                       class="btn text-white btn-primary">货品</a>
+                                    <a th:href="'/shop/product/list.html?del='+${product.getId()}" type="button"
+                                       class="btn btn-danger">删除</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 商品全局脚本 -->
+<div th:replace="~{/shop/comm::script}"></div>
+
+</body>
+
+</html>

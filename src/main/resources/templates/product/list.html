@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>产品</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/comm.css">
+    <link rel="stylesheet" href="/css/product_list.css">
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="~{comm::nav}"></nav>
+
+<!--顶部信息栏-->
+<div class="container-self topbar">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-center text-md-left mt-3 -mb-5"
+                    th:text="(${#request.getParameter('k')}==null ? '' : ${'正在浏览“'+#request.getParameter('k')+'”相关商品'})">
+                    d</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--筛选栏-->
+<div class="container rounded-lg p-4 mt-n5 mb-4 optionsbar">
+    <form id="filters">
+        <input type="hidden" name="s" id="s" th:value="${#request.getParameter('s')}">
+        <input type="hidden" name="k" id="k" th:value="${#request.getParameter('k')}">
+        <input type="hidden" name="p" id="p" th:value="${#request.getParameter('p')}">
+    </form>
+    <div class="row-2">
+        <button class="btn btn-filter" type="button" data-toggle="collapse" data-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+            筛选
+        </button>
+        <div class="collapse mt-3" id="collapseExample">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row justify-content-between">
+                        <div class="col-12 col-lg-5">
+                            <div class="btn-group w-100 sort" role="group" aria-label="First group">
+                                <button type="button" class="btn btn-light" value="default">默认排序</button>
+                                <button type="button" class="btn btn-light" value="price-low">价格最低</button>
+                                <button type="button" class="btn btn-light" value="price-height">价格最高</button>
+                                <button type="button" class="btn btn-light" value="newest">最新上架</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="input-group mt-3 mt-lg-0 price-range">
+                                <input type="number" class="form-control" id="min-price"
+                                       th:value="${#request.getParameter('p')==null ? '' : (#request.getParameter('p').length() <=2 ? '' : #request.getParameter('p').split('-')[0])}"
+                                       placeholder="最低价">
+                                <input type="number" class="form-control" id="max-price"
+                                       th:value="${#request.getParameter('p')==null ? '' : (#request.getParameter('p').length() <=2 ? '' : #request.getParameter('p').split('-')[1])}"
+                                       placeholder="最高价">
+                                <button type="button" class="form-control btn btn-light btn-price">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--商品列表-->
+<div class="container shops mb-5">
+    <div class="row row-cols-4">
+        <div class="col box" th:each="product : ${ProductList}">
+            <a th:href="@{'/product/'+${product.getId()}+'.html'}">
+                <img th:src="${product.getImg()}" class="w-100">
+            </a>
+            <div class="bottom">
+                <a th:href="@{'/product/'+${product.getId()}+'.html'}"><h6 class="title"
+                                                                           th:text="${product.getTitle()}">商品标题</h6></a>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="price"><small>￥</small><span th:text="${product.getPrice()}">0.00</span></p>
+                    </div>
+                    <div class="text-nowrap">
+                        <ion-icon src="/svg/cart3.svg" class="cart" th:attr="attr=${product.getAttr()}"
+                                  th:value="${product.getAttrID()}"></ion-icon>
+                        <ion-icon src="/svg/heart.svg" class="wish" th:value="${product.getId()}"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div>
+
+        <!-- 分页 -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination mt-4 justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" th:href="${urlparam}+'&q='+${page.get('current')-1}">
+                        <span>&laquo;</span>
+                    </a>
+                </li>
+                <li th:class="'page-item'+(${page.get('current') eq pageNo} ? ' active' : '')"
+                    th:each="pageNo : ${#numbers.sequence(1,page.get('pages'))}"><a class="page-link"
+                                                                                    th:href="${urlparam}+'&q='+${pageNo}"
+                                                                                    th:text="${pageNo}">0</a></li>
+                <li class="page-item">
+                    <a class="page-link" th:href="${urlparam}+'&q='+${page.get('current')+1}">
+                        <span>&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</div>
+
+<!-- 底部 -->
+<div th:replace="~{comm::footer}"></div>
+
+<!-- 提示弹框 -->
+<div th:replace="~{comm::prompt-status}"></div>
+
+<!--全局脚本-->
+<div th:replace="~{comm::script}"></div>
+<script src="/js/product_list.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/comm.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/chat.css"/>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="~{comm::nav}"></nav>
+
+<!-- 轮播图 -->
+<div class="banner">
+    <div id="carousel" class="carousel slide carousel-fade" data-interval="1900" data-ride="carousel" data-touch="true"
+         data-pause="false">
+
+        <!-- 图片切换 -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+            <li data-target="#carousel" data-slide-to="4"></li>
+        </ol>
+
+        <!-- 图片 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-block w-100" style="background-image: url('img/banner/00.jpg');"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-block w-100" style="background-image: url('img/banner/02.jpg');"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-block w-100" style="background-image: url('img/banner/03.jpg');"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-block w-100" style="background-image: url('img/banner/04.jpg');"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-block w-100" style="background-image: url('img/banner/05.jpg');"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 特点描述 -->
+<div class="container feature my-5">
+    <div class="row">
+        <div class="col-6 col-sm-6 col-md-3">
+            <div class="featurebox">
+                <img src="img/icons/index-feature12.png">
+                <h5 class="text-nowrap">无需登录</h5>
+                <p class="text-nowrap">下单即可购买</p>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3">
+            <div class="featurebox">
+                <img src="img/icons/index-feature22.png">
+                <h5 class="text-nowrap">自动发货</h5>
+                <p class="text-nowrap">购买立即发货</p>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3">
+            <div class="featurebox">
+                <img src="img/icons/index-feature32.png">
+                <h5 class="text-nowrap">客户服务</h5>
+                <p class="text-nowrap">24小时在线服务</p>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-3">
+            <div class="featurebox">
+                <img src="img/icons/index-feature42.png">
+                <h5 class="text-nowrap">安全支付</h5>
+                <p class="text-nowrap">全程SSL加密</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 为你推荐 -->
+<div class="container recommend my-5">
+    <div class="row">
+        <div class="col-12 text-center mt-1">
+            <h3>为你推荐</h3>
+            <span class="badge badge-warning">recommended for you</span>
+        </div>
+    </div>
+    <div class="row justify-content-center justify-content-sm-start">
+        <div class="col-5 col-sm-6 col-md-3 box my-3 text-center text-sm-left">
+            <a href="#" class="text-decoration-none">
+                <img src="img/products/2.png" class="w-100">
+                <div class="toolbar">
+                    <ion-icon src="/svg/heart.svg"></ion-icon>
+                    <ion-icon src="/svg/cart3.svg"></ion-icon>
+                </div>
+                <p class="title"><strong>PDFelement专业版 全能PDF编辑</strong></p>
+                <p class="price"><small>￥</small>299.<small>00</small></p>
+            </a>
+        </div>
+        <div class="col-5 col-sm-6 col-md-3 box my-3 text-center text-sm-left">
+            <a href="#" class="text-decoration-none">
+                <img src="img/products/4.png" class="w-100">
+                <div class="toolbar">
+                    <ion-icon src="/svg/heart.svg"></ion-icon>
+                    <ion-icon src="/svg/cart3.svg"></ion-icon>
+                </div>
+                <p class="title"><strong>Eagle高效的图片素材收集管理工具</strong></p>
+                <p class="price"><small>￥</small>199.<small>00</small></p>
+            </a>
+        </div>
+        <div class="col-5 col-sm-6 col-md-3 box my-3 text-center text-sm-left">
+            <a href="#" class="text-decoration-none">
+                <img src="img/products/6.png" class="w-100">
+                <div class="toolbar">
+                    <ion-icon src="/svg/heart.svg"></ion-icon>
+                    <ion-icon src="/svg/cart3.svg"></ion-icon>
+                </div>
+                <p class="title"><strong>Knotes双向同步的Kindle标注管理</strong></p>
+                <p class="price"><small>￥</small>29.<small>00</small></p>
+            </a>
+        </div>
+        <div class="col-5 col-sm-6 col-md-3 box my-3 text-center text-sm-left">
+            <a href="#" class="text-decoration-none">
+                <img src="img/products/psd.png" class="w-100">
+                <div class="toolbar">
+                    <ion-icon src="/svg/heart.svg"></ion-icon>
+                    <ion-icon src="/svg/cart3.svg"></ion-icon>
+                </div>
+                <p class="title"><strong>270套Photoshop模板</strong></p>
+                <p class="price"><small>￥</small>39.<small>00</small></p>
+            </a>
+        </div>
+        <div class="col-5 col-sm-6 col-md-3 box my-3 text-center text-sm-left">
+            <a href="#" class="text-decoration-none">
+                <img src="img/products/doc.png" class="w-100">
+                <div class="toolbar">
+                    <ion-icon src="/svg/heart.svg"></ion-icon>
+                    <ion-icon src="/svg/cart3.svg"></ion-icon>
+                </div>
+                <p class="title"><strong>200套word文档</strong></p>
+                <p class="price"><small>￥</small>19.<small>00</small></p>
+            </a>
+        </div>
+        <div class="col-5 col-sm-6 col-md-3 box my-3 text-center text-sm-left">
+            <a href="#" class="text-decoration-none">
+                <img src="img/products/xls.png" class="w-100">
+                <div class="toolbar">
+                    <ion-icon src="/svg/heart.svg"></ion-icon>
+                    <ion-icon src="/svg/cart3.svg"></ion-icon>
+                </div>
+                <p class="title"><strong>160套Excel模板</strong></p>
+                <p class="price"><small>￥</small>8.<small>00</small></p>
+            </a>
+        </div>
+        <div class="col-5 col-sm-6 col-md-3 box my-3 text-center text-sm-left">
+            <a href="#" class="text-decoration-none">
+                <img src="img/products/ppt.png" class="w-100">
+                <div class="toolbar">
+                    <ion-icon src="/svg/heart.svg"></ion-icon>
+                    <ion-icon src="/svg/cart3.svg"></ion-icon>
+                </div>
+                <p class="title"><strong>320套PPT模板</strong></p>
+                <p class="price"><small>￥</small>26.<small>00</small></p>
+            </a>
+        </div>
+        <div class="col-5 col-sm-6 col-md-3 box my-3 text-center text-sm-left">
+            <a href="#" class="text-decoration-none">
+                <img src="img/products/8.png" class="w-100">
+                <div class="toolbar">
+                    <ion-icon src="/svg/heart.svg"></ion-icon>
+                    <ion-icon src="/svg/cart3.svg"></ion-icon>
+                </div>
+                <p class="title"><strong>iSlidePPT设计辅助增强</strong></p>
+                <p class="price"><small>￥</small>99.<small>00</small></p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- 专区 -->
+<div class="container zone">
+    <div class="row justify-content-around no-gutters">
+        <div class="col-10 col-sm-10 col-md-5 block mb-4">
+            <div class="row no-gutters">
+                <div class="text col-6">
+                    <h2 class="text-nowrap"><strong>限免专区</strong></h2>
+                    <a class="btn btn-shadow btn-sm" href="#">立即进入</a>
+                </div>
+                <img src="img/illustration/index-zone1.png" class="col-6">
+            </div>
+        </div>
+        <div class="col-10 col-sm-10 col-md-5 block mb-4">
+            <div class="row no-gutters">
+                <img src="img/illustration/index-zone2.png" class="col-6">
+                <div class="text col-6 text-right">
+                    <h2 class="text-nowrap"><strong>折扣专区</strong></h2>
+                    <a class="btn btn-shadow btn-sm" href="#">立即进入</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 优惠折扣 -->
+<div class="container discount my-5">
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h3>优惠折扣</h3>
+            <span class="badge badge-success">on sale</span>
+        </div>
+    </div>
+    <div class="row justify-content-center justify-content-sm-start">
+        <div class="col-10 col-md-6 col-lg-4 box my-3">
+            <a href="#" class="text-decoration-none">
+                <div class="row no-gutters">
+                    <div class="col-5">
+                        <img src="img/products/3.png" class="w-100">
+                        <span class="badge">-15%</span>
+                    </div>
+                    <div class="col-7">
+                        <p class="title"><strong>MoneyWiz知名的多平台理财</strong></p>
+                        <p class="price"><small>￥</small>169.<small>00
+                            <del class="text-black-50">￥198.00</del>
+                        </small></p>
+                        <div class="toolbar">
+                            <ion-icon src="/svg/heart.svg"></ion-icon>
+                            <ion-icon src="/svg/cart3.svg"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-10 col-md-6 col-lg-4 box my-3">
+            <a href="#" class="text-decoration-none">
+                <div class="row no-gutters">
+                    <div class="col-5">
+                        <img src="img/products/1.png" class="w-100">
+                        <span class="badge">-13%</span>
+                    </div>
+                    <div class="col-7">
+                        <p class="title"><strong>Office 365</strong></p>
+                        <p class="price"><small>￥</small>349.<small>00
+                            <del class="text-black-50">￥398.00</del>
+                        </small></p>
+                        <div class="toolbar">
+                            <ion-icon src="/svg/heart.svg"></ion-icon>
+                            <ion-icon src="/svg/cart3.svg"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-10 col-md-6 col-lg-4 box my-3">
+            <a href="#" class="text-decoration-none">
+                <div class="row no-gutters">
+                    <div class="col-5">
+                        <img src="img/products/5.png" class="w-100">
+                        <span class="badge">-10%</span>
+                    </div>
+                    <div class="col-7">
+                        <p class="title"><strong>Internet Download Manager</strong></p>
+                        <p class="price"><small>￥</small>149.<small>00
+                            <del class="text-black-50">￥165.00</del>
+                        </small></p>
+                        <div class="toolbar">
+                            <ion-icon src="/svg/heart.svg"></ion-icon>
+                            <ion-icon src="/svg/cart3.svg"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-10 col-md-6 col-lg-4 box my-3">
+            <a href="#" class="text-decoration-none">
+                <div class="row no-gutters">
+                    <div class="col-5">
+                        <img src="img/products/zip.png" class="w-100">
+                        <span class="badge">-27%</span>
+                    </div>
+                    <div class="col-7">
+                        <p class="title"><strong>6套织梦模板</strong></p>
+                        <p class="price"><small>￥</small>369.<small>00
+                            <del class="text-black-50">￥499.00</del>
+                        </small></p>
+                        <div class="toolbar">
+                            <ion-icon src="/svg/heart.svg"></ion-icon>
+                            <ion-icon src="/svg/cart3.svg"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-10 col-md-6 col-lg-4 box my-3">
+            <a href="#" class="text-decoration-none">
+                <div class="row no-gutters">
+                    <div class="col-5">
+                        <img src="img/products/7.png" class="w-100">
+                        <span class="badge">-52%</span>
+                    </div>
+                    <div class="col-7">
+                        <p class="title"><strong>iMazing 简洁的iPhone备份及管理软件</strong></p>
+                        <p class="price"><small>￥</small>149.<small>00
+                            <del class="text-black-50">￥309.00</del>
+                        </small></p>
+                        <div class="toolbar">
+                            <ion-icon src="/svg/heart.svg"></ion-icon>
+                            <ion-icon src="/svg/cart3.svg"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-10 col-md-6 col-lg-4 box my-3">
+            <a href="#" class="text-decoration-none">
+                <div class="row no-gutters">
+                    <div class="col-5">
+                        <img src="img/products/9.png" class="w-100">
+                        <span class="badge">-30%</span>
+                    </div>
+                    <div class="col-7">
+                        <p class="title"><strong>26个建筑模型</strong></p>
+                        <p class="price"><small>￥</small>449.<small>00
+                            <del class="text-black-50">￥688.00</del>
+                        </small></p>
+                        <div class="toolbar">
+                            <ion-icon src="/svg/heart.svg"></ion-icon>
+                            <ion-icon src="/svg/cart3.svg"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- banner广告 -->
+<div class="container">
+    <div class="row text-center">
+        <div class="col-6 col-sm-6 col-md-4 my-4">
+            <img src="img/ads-index/banner01.jpg" class="img-fluid">
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 my-4">
+            <img src="img/ads-index/banner02.jpg" class="img-fluid">
+        </div>
+        <div class="col-12 col-md-4 my-4">
+            <img src="img/ads-index/banner03.jpg" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<!-- 底部 -->
+<div th:replace="~{comm::footer}"></div>
+<!--客服咨询-->
+<div th:replace="~{comm::chat}"></div>
+<!--全局脚本-->
+<div th:replace="~{comm::script}"></div>
+<script src="js/chat.js"></script>
+
+</body>
+</html>

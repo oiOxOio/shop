@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/comm.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" type="text/css" href="/css/chat.css"/>
+</head>
+<body>
+<!-- 导航 -->
+
+<nav th:replace="~{comm::nav}"></nav>
+
+<div class="container my-5 d-none cart">
+    <div class="row">
+
+        <div class="col-12 col-lg-9 mb-4 content"></div>
+
+        <div class="col-12 col-lg-3">
+            <div class="total">
+                <h3 class="title"><strong>合计</strong></h3>
+                <p class="d-flex justify-content-between">
+                    <span>数量</span>
+                    <strong class="h5 number">0</strong>
+                </p>
+                <p class="d-flex justify-content-between price">
+                    <span>价格</span>
+                    <strong class="h5">￥<span class="val">0</span></strong>
+                </p>
+                <form action="/pay" method="post" target="_blank">
+                    <input type="hidden" name="products" value="">
+                    <button type="submit" class="btn btn-primary btn-pay w-100">付款</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--  空购物车-->
+<div class="container cart-empty my-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <img src="img/cart/empty-cart.svg" class="w-100">
+            <h3 class="mt-4"><strong>购物车空空的</strong></h3>
+            <p class="mb-4">快去挑选一件商品吧</p>
+            <a href="index.html">
+                <button type="button" class="btn btn-primary">去购物</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- 底部 -->
+<div th:replace="~{comm::footer}"></div>
+
+<!--客服咨询-->
+<div th:replace="comm::chat"></div>
+
+<!-- 提示弹框 -->
+<div th:replace="~{comm::prompt-status}"></div>
+
+<!--全局脚本-->
+<div th:replace="~{comm::script}"></div>
+<script src="/js/cart.js"></script>
+<script src="/js/chat.js"></script>
+
+</body>
+</html>

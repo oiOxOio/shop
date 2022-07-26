@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>工作台</title>
+    <link rel="icon" href="/img/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_comm.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shop_index.css"/>
+</head>
+<body>
+
+<!-- 侧边导航 -->
+<div th:replace="~{shop/comm::topbar}"></div>
+<div th:replace="~{shop/comm::menu}"></div>
+
+<!-- 页面内容 -->
+<div class="right-main index">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">店铺订单</h5>
+                    <table class="table table-bordered table-hover text-center">
+                        <thead>
+                        <tr>
+                            <th scope="col">编号</th>
+                            <th scope="col">商品</th>
+                            <th scope="col">属性</th>
+                            <th scope="col">价格</th>
+                            <th scope="col">状态</th>
+                            <th scope="col">时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="order : ${orders}">
+                            <th scope="row" th:text="${order.get('orders_id')}">0000000000</th>
+                            <td th:text="${order.get('title')}">商品标题</td>
+                            <td th:text="${order.get('attr')}">商品属性</td>
+                            <td th:text="${order.get('price')}">0.00</td>
+                            <td th:if="${order.get('status') eq 'payment'}">待付款</td>
+                            <td th:if="${order.get('status') eq 'deliver'}"><a
+                                    th:href="'/shop/orders/deliver/'+${order.get('orders_id')}+'.html'">待发货</a></td>
+                            <td th:if="${order.get('status') eq 'receive'}">待收货</td>
+                            <td th:if="${order.get('status') eq 'finish'}">已完成</td>
+                            <td th:text="${order.get('order_time')}">0000-00-00 00:00:00</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 商品全局脚本 -->
+<div th:replace="~{/shop/comm::script}"></div>
+
+</body>
+
+</html>

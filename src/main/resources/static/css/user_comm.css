@@ -1,0 +1,98 @@
+.user-comm {
+    margin-top: -48px;
+}
+
+.user-comm .card-header h5 {
+    margin-bottom: 0px;
+}
+
+.user-comm .card-header {
+    background-color: #fff;
+}
+
+.container .card {
+    border: none;
+    box-shadow: 0px 12px 15px rgba(140, 152, 164, .1);
+}
+
+/*顶部用户信息*/
+.personal-info {
+    background-color: #007bff;
+    padding-top: 2.7rem;
+    padding-bottom: 6.6rem;
+}
+
+.personal-info .header .touxiang img {
+    box-shadow: 2px 6px 15px 0px rgb(69 65 78 / 30%);
+    border-radius: 50%;
+    min-width: 9rem;
+    min-height: 9rem;
+    max-width: 9rem;
+    max-height: 9rem;
+}
+
+.personal-info .touxiang > div > div {
+    padding-left: 3px;
+}
+
+.personal-info h2 {
+    color: white;
+}
+
+.personal-info span {
+    color: #afccf3;
+}
+
+.personal-info .btn-signout {
+    background-color: #1572e8;
+    border: solid #45a8f6 1px;
+    border-radius: 6px;
+    padding: .4rem .6rem;
+}
+
+.personal-info .btn-signout:hover {
+    background-color: #45a8f6;
+}
+
+.personal-info .btn-user-menu {
+    color: #677788;
+    padding: .4rem .6rem;
+    background: #f8fafd;
+}
+
+/*用户导航栏*/
+.user-navbar {
+    flex-direction: inherit;
+}
+
+.user-navbar .nav {
+    margin-bottom: 1rem;
+}
+
+.user-navbar hr {
+    margin: .3rem 0;
+}
+
+.user-navbar .nav .nav-item a {
+    color: #5b5e60;
+    padding-left: 0;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+}
+
+.user-navbar .nav .nav-item a ion-icon {
+    margin-right: .5rem;
+}
+
+.user-navbar .nav .nav-item a span {
+    vertical-align: middle;
+}
+
+/* 没有数据提示样式 */
+.no-data img {
+    width: 11rem;
+}
+
+.no-data .text {
+    color: #c0c2ca;
+}

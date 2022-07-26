@@ -1,0 +1,110 @@
+.form-control {
+    padding: 0.2rem 0.25rem;
+}
+
+.product-index {
+    transition: .3s;
+}
+
+.product-index .product-carousel #carousel .carousel-inner {
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid #e7eaf3;
+}
+
+.product-index .product-carousel a {
+    opacity: 1;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 50%;
+    transform: translateY(-50%);
+}
+
+.product-index .product-carousel a:focus {
+    background-color: transparent;
+}
+
+.product-index .product-carousel li {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    background: no-repeat content-box;
+    background-size: 40px;
+    border: solid 1px #a7a7a7;
+}
+
+.product-index .product-carousel a svg {
+    color: black;
+    font-size: 40px;
+    padding: 8px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px 0px rgba(140, 152, 164, 0.25);
+}
+
+.product-index .product-carousel a ion-icon {
+    color: black;
+    font-size: 1.4rem;
+    padding: .4rem;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px 0px rgba(140, 152, 164, 0.25);
+}
+
+.product-index .product-carousel a:hover svg {
+    color: #4b566b;
+    background: #f3f5f9;
+}
+
+.product-index .details .price {
+    color: #1f8bff;
+}
+
+/*选择规格*/
+.product-index .details .attr .btn-attr {
+    color: #335eea;
+    background: rgba(51, 94, 234, .1);
+    margin-right: .3rem;
+    margin-bottom: .3rem;
+}
+
+.product-index .details .attr .btn-attr.active {
+    color: #fff;
+    background: #007bff;
+}
+
+/*操作按钮*/
+.product-index .details .operation {
+}
+
+.product-index .details .operation .input-add-sub input,
+.product-index .details .operation .input-add-sub {
+    height: 2.8rem;
+}
+
+.product-index .details .operation .btn-addwishlist,
+.product-index .details .operation .btn-addcart,
+.product-index .details .operation .btn-buy {
+    width: 100%;
+    height: 2.8rem;
+    color: #848484;
+    background: #f3f5f9;
+}
+
+.product-index .details .operation .btn-addwishlist span,
+.product-index .details .operation .btn-addcart span,
+.product-index .details .operation .btn-buy span {
+    vertical-align: text-top;
+    margin-left: .3rem;
+}
+
+.product-index .details .operation .btn-buy {
+    color: #fff;
+    background: #007bff;
+    box-shadow: 0 0.5rem 1.125rem -0.275rem #69b3fe;
+}
+
+/* 商品描述 */
+.product-index .description * {
+    margin: 0;
+    padding: 0;
+}
