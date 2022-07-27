@@ -12,6 +12,15 @@
 
 >😶现在工作了 看了以前写的项目 写的跟💩一样
 
+### [在线演示](https://shop.5hp.cc)
+
+账号：**`admin@admin.com`** 密码：**`111111`**
+
+> 为保证演示站正常运行，此站每天都会初始化数据😉
+
+### [演示视频](https://www.bilibili.com/video/BV1i54y1a7wu)
+[![](https://i.imgur.com/vKb2F1B.png)](https://www.bilibili.com/video/BV1i54y1a7wu)
+
 ### 快速开始
 1. 创建数据库,并导入[shop.sql](docs/shop.sql)
 2. 完善以下配置文件
@@ -71,15 +80,6 @@ public class ShopApplication {
 
 ```
 > 运行前得先使用maven进行项目构建
-
-### [在线演示](https://shop.5hp.cc)
-
-账号：**`admin@admin.com`** 密码：**`111111`**
-
-> 为保证演示站正常运行，此站每天都会初始化数据😉
-
-### [演示视频](https://www.bilibili.com/video/BV1i54y1a7wu)
-[![](https://i.imgur.com/vKb2F1B.png)](https://www.bilibili.com/video/BV1i54y1a7wu)
 
 ### 图片预览
 <img align="center" src="docs/mmexport1610503042771.jpg"/>
