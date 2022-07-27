@@ -51,7 +51,7 @@ server:
   port: 8081
 
 ```
-> 支付相关配置可前往[支付宝开发平台](https://www.alipay.com/)申请
+> 支付相关配置可前往[支付宝开放平台](https://www.alipay.com/)申请
 
 3. 运行启动类
 ```java
