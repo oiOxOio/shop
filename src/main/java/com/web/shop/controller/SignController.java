@@ -153,7 +153,7 @@ public class SignController {
             simpleMailMessage.setSubject("欢迎注册DIGITAL SHOP！");
             simpleMailMessage.setText("您的注册验证码是：" + email_code);
             simpleMailMessage.setTo(email);
-            simpleMailMessage.setFrom("jcay9@qq.com");
+            simpleMailMessage.setFrom("spring.io@qq.com");
             javaMailSender.send(simpleMailMessage);
             msg = "successed";
 
